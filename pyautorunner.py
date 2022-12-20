@@ -11,17 +11,17 @@ progress.pack()
 
 # Function to run all the Python scripts in the directory
 def run_scripts():
-    # Get a list of all the Python scripts in the current directory
+# Get a list of all the Python scripts in the current directory
     scripts = [f for f in os.listdir() if f.endswith(".py")]
     progress["maximum"] = len(scripts)
 
-    # Loop through the scripts and run them one by one
+# Loop through the scripts and run them one by one
     for i, script in enumerate(scripts):
-        # Update the progress bar
+# Update the progress bar
         progress["value"] = i+1
         progress.update()
 
-        # Try to run the script and log any errors
+# Try to run the script and log any errors
         try:
             exec(open(script).read())
         except Exception as e:
